@@ -1,6 +1,6 @@
 package ss1_introduction_java.practice;
 
-public class khai_bao_va_su_dung_bien_muc_tieu {
+public class DeclareAndUseVariable {
     public static void main(String[] args) {
         int i = 10;
         float f = 20.5f;
