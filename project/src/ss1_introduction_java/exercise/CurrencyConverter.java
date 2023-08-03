@@ -5,7 +5,8 @@ public class CurrencyConverter {
         Scanner scanner = new Scanner(System.in);
         int rate = 23000;
         System.out.println("Input USD");
-        double usd, vnd;
+        double usd;
+        double vnd;
         usd = scanner.nextInt();
         vnd = usd * rate;
         System.out.println(usd + " is equivalent to " + vnd);
