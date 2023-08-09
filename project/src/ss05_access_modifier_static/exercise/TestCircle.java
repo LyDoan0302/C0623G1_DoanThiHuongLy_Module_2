@@ -7,7 +7,6 @@ public class TestCircle {
         System.out.println(circle1.getArea());
 
         Circle circle2 = new Circle(4.5);
-        circle2.setRadius(4.5);
         System.out.println(circle2.getRadius());
         System.out.println(circle2.getArea());
 
