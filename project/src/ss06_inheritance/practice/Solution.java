@@ -1,6 +1,7 @@
 package ss06_inheritance.practice;
 
 public class Solution {
+
     static boolean solution(int[] array) {
         int totalSum = 0;
         for (int sum : array) {
