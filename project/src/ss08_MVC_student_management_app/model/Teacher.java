@@ -17,4 +17,15 @@ public class Teacher extends Person {
     public void setProfessional(String professional) {
         this.professional = professional;
     }
+
+    @Override
+    public String toString() {
+        return "Teacher{" +
+                "id='" + id + '\'' +
+                ", name='" + name + '\'' +
+                ", dateOfBirth='" + dateOfBirth + '\'' +
+                ", gender=" + gender +
+                ", professional='" + this.getProfessional() +
+                '}';
+    }
 }

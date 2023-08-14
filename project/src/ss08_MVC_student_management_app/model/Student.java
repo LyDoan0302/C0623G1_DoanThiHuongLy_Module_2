@@ -26,4 +26,15 @@ public class Student extends Person{
     public void setPoint(int point) {
         this.point = point;
     }
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "id='" + id + '\'' +
+                ", name='" + name + '\'' +
+                ", dateOfBirth='" + dateOfBirth + '\'' +
+                ", gender=" + gender +
+                ", className='" + this.getClassName() +
+                '}';
+    }
 }
