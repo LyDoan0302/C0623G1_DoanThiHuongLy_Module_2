@@ -5,7 +5,7 @@ import java.util.Objects;
 public class MyListTest {
     public static void main(String[] args) {
         MyList myList = new MyList(5);
-        for (int i = 0; i < myList.size(); i++) {
+        for (int i = 0; i < myList.size() ; i++) {
             myList.setElements(i, i + 1);
         }
         System.out.println(myList);

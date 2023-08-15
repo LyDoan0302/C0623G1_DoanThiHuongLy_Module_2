@@ -57,7 +57,8 @@ public class MyList<E> {
     }
 
     public int size() {
-        return elements.length;
+        this.size = elements.length;
+        return size;
     }
 
     public E clone(E newElements) {
@@ -77,10 +78,16 @@ public class MyList<E> {
         return -1;
     }
     public void setElements(int index, Object element) {
-     this.elements[index] = element;
+     if(index < 0 || index >= size) {
+         throw new IndexOutOfBoundsException();
+     }
+        this.elements[index] = element;
     }
 
-    public E getElements() {
+    public E getElements(int index) {
+        if(index < 0 || index >= size) {
+            throw new IndexOutOfBoundsException();
+        }
         return (E) this.elements;
     }
 
