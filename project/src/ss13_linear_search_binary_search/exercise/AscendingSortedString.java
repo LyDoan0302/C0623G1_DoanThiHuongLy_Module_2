@@ -1,6 +1,8 @@
 package ss13_linear_search_binary_search.exercise;
 
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class AscendingSortedString {
@@ -8,21 +10,30 @@ public class AscendingSortedString {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Input string to sort by ascending:");
         String string = scanner.nextLine();
-        String str = sortStringByAscending(string);
-        System.out.println(str);
+
+        sortStringByAscending(string);
     }
 
-    public static String sortStringByAscending(String string) {
+    public static void sortStringByAscending(String string) {
         String str = "";
-        char max = string.charAt(0);
-
+        List<Character> max = new ArrayList<>();
+        List<Character> list = new ArrayList<>();
         for (int i = 0; i < string.length(); i++) {
-
-            if (max <= string.charAt(i)) {
-                max = string.charAt(i);
-                str += string.charAt(i);
+            list.add(string.charAt(i));
+            for (int j = i + 1; j < string.length(); j++) {
+                if(string.charAt(j) > string.charAt(i)) {
+                    list.add(string.charAt(j));
+                }
             }
+            if(list.size() > max.size()) {
+                max.clear();
+                max.addAll(list);
+            }
+            list.clear();
         }
-        return str;
+        for (Character chr : max) {
+            System.out.print(chr);
+        }
+        System.out.println();
     }
 }
