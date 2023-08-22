@@ -4,7 +4,7 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class WriterDemo {
+public class IO_stream_Demo {
     public static void writeFile(String pathName, List<String> data) {
         File file = null;
         FileWriter fileWriter = null;
@@ -46,9 +46,24 @@ public class WriterDemo {
             bufferedReader = new BufferedReader(fileReader);
 
             String str;
-            while ((str = bufferedReader.readLine()) != null )
+            while ((str = bufferedReader.readLine()) != null ) {
+                result.add(str);
+            }
+            return result;
         } catch (IOException e) {
             e.printStackTrace();
+            return result;
+        } finally {
+            try {
+                if(bufferedReader != null) {
+                    bufferedReader.close();
+                }
+                if(fileReader != null) {
+                    fileReader.close();
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
     }
 }
