@@ -1,0 +1,5 @@
+package case_study_furama_resort.model.service;
+
+public interface IContractService extends IService{
+    void editContract(String contractId);
+}
