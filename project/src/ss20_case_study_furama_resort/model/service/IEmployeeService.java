@@ -1,4 +1,6 @@
-package case_study_furama_resort.model.service;
+package ss20_case_study_furama_resort.model.service;
 
-public interface IEmployeeService extends IPersonService{
+import ss20_case_study_furama_resort.model.model.Employee;
+
+public interface IEmployeeService extends IPersonService<Employee> {
 }

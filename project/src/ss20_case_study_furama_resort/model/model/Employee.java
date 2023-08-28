@@ -1,4 +1,4 @@
-package case_study_furama_resort.model.model;
+package ss20_case_study_furama_resort.model.model;
 
 public class Employee extends Person{
     private String academicLevel;
@@ -35,5 +35,14 @@ public class Employee extends Person{
 
     public void setSalary(double salary) {
         this.salary = salary;
+    }
+
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "academicLevel='" + academicLevel + '\'' +
+                ", position='" + position + '\'' +
+                ", salary=" + salary +
+                '}';
     }
 }

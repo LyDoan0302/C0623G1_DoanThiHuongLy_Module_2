@@ -1,6 +1,11 @@
-package case_study_furama_resort.model.repository;
+package ss20_case_study_furama_resort.model.repository;
 
-public interface IFacilityRepository extends IRepository{
-    void displayListFacilityMaintain();
-    void deleteFacility(String id);
+import ss20_case_study_furama_resort.model.model.Facility;
+
+import java.awt.*;
+import java.util.List;
+
+public interface IFacilityRepository extends IRepository<Facility> {
+    List<Facility> displayListFacilityMaintenance();
+    void deleteFacility();
 }

@@ -1,4 +1,7 @@
-package case_study_furama_resort.model.repository;
+package ss20_case_study_furama_resort.model.repository;
 
-public interface IEmployeeRepository extends IPersonRepository{
+import ss20_case_study_furama_resort.model.model.Employee;
+import ss20_case_study_furama_resort.model.model.Person;
+
+public interface IEmployeeRepository extends IPersonRepository<Employee> {
 }

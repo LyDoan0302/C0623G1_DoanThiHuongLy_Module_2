@@ -1,5 +1,7 @@
-package case_study_furama_resort.model.service;
+package ss20_case_study_furama_resort.model.service;
 
-public interface IContractService extends IService{
+import ss20_case_study_furama_resort.model.model.Contract;
+
+public interface IContractService extends IService<Contract> {
     void editContract(String contractId);
 }

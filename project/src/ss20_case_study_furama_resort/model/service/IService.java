@@ -1,4 +1,4 @@
-package case_study_furama_resort.model.service;
+package ss20_case_study_furama_resort.model.service;
 
 import java.util.List;
 

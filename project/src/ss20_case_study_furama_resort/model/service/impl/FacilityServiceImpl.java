@@ -1,11 +1,14 @@
-package case_study_furama_resort.model.service.impl;
+package ss20_case_study_furama_resort.model.service.impl;
 
-import case_study_furama_resort.model.model.Facility;
-import case_study_furama_resort.model.service.IFacilityService;
+
+
+import ss20_case_study_furama_resort.model.model.Facility;
+import ss20_case_study_furama_resort.model.service.IFacilityService;
 
 import java.util.List;
 
 public class FacilityServiceImpl implements IFacilityService {
+
 
     @Override
     public List<Facility> displayListFacilityMaintain() {
@@ -18,12 +21,12 @@ public class FacilityServiceImpl implements IFacilityService {
     }
 
     @Override
-    public List display() {
+    public List<Facility> display() {
         return null;
     }
 
     @Override
-    public void add(Object o) {
+    public void add(Facility facility) {
 
     }
 }

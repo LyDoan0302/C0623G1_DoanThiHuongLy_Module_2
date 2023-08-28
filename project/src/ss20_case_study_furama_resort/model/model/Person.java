@@ -1,4 +1,4 @@
-package case_study_furama_resort.model.model;
+package ss20_case_study_furama_resort.model.model;
 
 public abstract class Person {
     private String id;
@@ -75,6 +75,16 @@ public abstract class Person {
         this.email = email;
     }
 
-
-
+    @Override
+    public String toString() {
+        return "Person{" +
+                "id='" + id + '\'' +
+                ", name='" + name + '\'' +
+                ", birth='" + birth + '\'' +
+                ", gender='" + gender + '\'' +
+                ", privateId='" + privateId + '\'' +
+                ", phoneNumber='" + phoneNumber + '\'' +
+                ", email='" + email + '\'' +
+                '}';
+    }
 }

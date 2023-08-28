@@ -1,25 +1,29 @@
-package case_study_furama_resort.model.repository.impl;
+package ss20_case_study_furama_resort.model.repository.impl;
+import ss20_case_study_furama_resort.model.model.Facility;
+import ss20_case_study_furama_resort.model.repository.IFacilityRepository;
+import java.util.List;
 
-import case_study_furama_resort.model.repository.IFacilityRepository;
 
 public class FacilityRepositoryImpl implements IFacilityRepository {
+
+
     @Override
-    public void displayListFacilityMaintain() {
+    public List<Facility> displayListFacilityMaintenance() {
+        return null;
+    }
+
+    @Override
+    public void deleteFacility() {
 
     }
 
     @Override
-    public void deleteFacility(String id) {
-
+    public List<Facility> display() {
+        return null;
     }
 
     @Override
-    public void display() {
-
-    }
-
-    @Override
-    public void add(Object o) {
+    public void add(Facility facility) {
 
     }
 }

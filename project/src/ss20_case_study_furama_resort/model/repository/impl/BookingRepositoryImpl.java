@@ -1,15 +1,20 @@
-package case_study_furama_resort.model.repository.impl;
+package ss20_case_study_furama_resort.model.repository.impl;
 
-import case_study_furama_resort.model.repository.IBookingRepository;
+import ss20_case_study_furama_resort.model.model.Booking;
+import ss20_case_study_furama_resort.model.repository.IBookingRepository;
+
+import java.util.List;
 
 public class BookingRepositoryImpl implements IBookingRepository {
-    @Override
-    public void display() {
 
+
+    @Override
+    public List<Booking> display() {
+        return null;
     }
 
     @Override
-    public void add(Object o) {
+    public void add(Booking booking) {
 
     }
 }

@@ -1,11 +1,12 @@
-package case_study_furama_resort.model.service.impl;
+package ss20_case_study_furama_resort.model.service.impl;
 
-import case_study_furama_resort.model.model.Booking;
-import case_study_furama_resort.model.service.IBookingService;
+import ss20_case_study_furama_resort.model.model.Booking;
+import ss20_case_study_furama_resort.model.repository.IBookingRepository;
 
 import java.util.List;
 
-public class BookingServiceImpl implements IBookingService {
+public class BookingServiceImpl implements IBookingRepository {
+
 
     @Override
     public List<Booking> display() {
@@ -13,7 +14,7 @@ public class BookingServiceImpl implements IBookingService {
     }
 
     @Override
-    public void add(Object o) {
+    public void add(Booking booking) {
 
     }
 }

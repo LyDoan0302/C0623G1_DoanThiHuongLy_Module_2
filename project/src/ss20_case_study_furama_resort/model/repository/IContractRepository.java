@@ -1,5 +1,7 @@
-package case_study_furama_resort.model.repository;
+package ss20_case_study_furama_resort.model.repository;
 
-public interface IContractRepository extends IRepository {
+import ss20_case_study_furama_resort.model.model.Contract;
+
+public interface IContractRepository extends IRepository<Contract> {
     void editContract(String contractId);
 }

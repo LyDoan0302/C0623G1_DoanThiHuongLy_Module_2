@@ -1,4 +1,6 @@
-package case_study_furama_resort.model.service;
+package ss20_case_study_furama_resort.model.service;
 
-public interface IBookingService extends IService{
+import ss20_case_study_furama_resort.model.model.Booking;
+
+public interface IBookingService extends IService<Booking> {
 }

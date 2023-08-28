@@ -1,6 +1,8 @@
-package case_study_furama_resort.model.repository;
+package ss20_case_study_furama_resort.model.repository;
+
+import java.util.List;
 
 public interface IRepository<E> {
-    void display();
+    List<E> display();
     void add(E e);
 }

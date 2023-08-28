@@ -1,4 +1,6 @@
-package case_study_furama_resort.model.repository;
+package ss20_case_study_furama_resort.model.repository;
 
-public interface IBookingRepository extends IRepository{
+import ss20_case_study_furama_resort.model.model.Booking;
+
+public interface IBookingRepository extends IRepository<Booking> {
 }

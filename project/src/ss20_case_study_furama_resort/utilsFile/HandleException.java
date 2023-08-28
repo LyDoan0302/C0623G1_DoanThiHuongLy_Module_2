@@ -1,4 +1,4 @@
-package case_study_furama_resort.utilsFile;
+package ss20_case_study_furama_resort.utilsFile;
 
 import java.util.Scanner;
 
