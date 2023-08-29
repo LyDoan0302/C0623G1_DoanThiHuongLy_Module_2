@@ -16,4 +16,15 @@ public class HandleException {
             }
         }
     }
+    public static double checkDouble() {
+        double input;
+        while (true) {
+            try {
+                input = Double.parseDouble(scanner.nextLine());
+                return input;
+            } catch (Exception e) {
+                System.out.println("Enter again:");
+            }
+        }
+    }
 }

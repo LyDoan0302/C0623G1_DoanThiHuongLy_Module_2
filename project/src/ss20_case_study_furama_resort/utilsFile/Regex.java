@@ -11,7 +11,8 @@ public class Regex {
     private static final String NAME_REGEX = "^[A-Z][a-z]+(\\s[A-Z][a-z]+)+$";
     private static final String PRIVATE_ID_REGEX = "^(\\d{9}|\\d{12})$";
     private static final String PHONE_NUMBER_REGEX = "^0\\d{9}$";
-    private static final String EMAIL_REGEX = "\"^(?=.{6,32}@)[A-Za-z0-9_-]+(\\.[A-Za-z0-9_-]+)*@[^-][A-Za-z0-9-]+)*(\\.[A-Za-z]{2,})$\")";
+    private static final String EMAIL_REGEX = "^([a-zA-Z0-9_\\.\\-])+\\@(([a-zA-Z0-9\\-])+\\.)+([a-zA-Z0-9]{2,4})+$";
+    private static final String DATE_OF_BIRTH = "^(0[1-9]|[12]\\d|3[01])\\/(0[1-9]|1[012])\\/([12]\\d{3})$";
     public static boolean employeeIdRegex(String empId) {
         pattern = Pattern.compile(EMPLOYEE_ID_REGEX);
         matcher = pattern.matcher(empId);
@@ -40,6 +41,11 @@ public class Regex {
     public static boolean emailRegex(String email) {
         pattern = Pattern.compile(EMAIL_REGEX);
         matcher = pattern.matcher(email);
+        return matcher.matches();
+    }
+    public static boolean dateOfBirthRegex(String birth) {
+        pattern = Pattern.compile(DATE_OF_BIRTH);
+        matcher = pattern.matcher(birth);
         return matcher.matches();
     }
 

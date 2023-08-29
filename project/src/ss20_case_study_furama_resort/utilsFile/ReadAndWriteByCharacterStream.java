@@ -16,7 +16,7 @@ public class ReadAndWriteByCharacterStream {
             bufferedReader = new BufferedReader(fileReader);
             String str = "";
             while ((str = bufferedReader.readLine()) != null) {
-                stringList.add(bufferedReader.readLine());
+                stringList.add(str);
             }
         } catch (IOException e) {
             System.out.println(e.getMessage());

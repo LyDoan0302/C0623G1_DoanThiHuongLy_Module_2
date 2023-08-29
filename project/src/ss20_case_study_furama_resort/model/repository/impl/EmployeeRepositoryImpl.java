@@ -17,19 +17,19 @@ public class EmployeeRepositoryImpl implements IEmployeeRepository {
 
     @Override
     public List<Employee> display() {
-        List<Employee> employeeList = this.getEmployeeList();
+        List<Employee> employeeList = this.convertToEmployee();
         return employeeList;
     }
 
     @Override
     public void add(Employee employee) {
-        List<Employee> employeeList = this.getEmployeeList();
+        List<Employee> employeeList = this.convertToEmployee();
         employeeList.add(employee);
         ReadAndWriteByCharacterStream.writeByCharacterStream(PATH_NAME, convertToString(employeeList));
     }
     @Override
     public void edit(Employee employee) {
-        List<Employee> employeeList = this.getEmployeeList();
+        List<Employee> employeeList = this.convertToEmployee();
         for(Employee ep : employeeList) {
             if(employee.getId().equals(ep.getId())) {
                 ep.setName(employee.getName());
@@ -48,10 +48,11 @@ public class EmployeeRepositoryImpl implements IEmployeeRepository {
 
     @Override
     public void delete(String id) {
-        List<Employee> employeeList = this.getEmployeeList();
+        List<Employee> employeeList = this.convertToEmployee();
         for(Employee ep : employeeList) {
             if(id.equals(ep.getId())) {
                 employeeList.remove(ep);
+                break;
             }
         }
         ReadAndWriteByCharacterStream.writeByCharacterStream(PATH_NAME,convertToString(employeeList));
@@ -59,8 +60,7 @@ public class EmployeeRepositoryImpl implements IEmployeeRepository {
 
     @Override
     public List<Employee> search(String name) {
-        List<Employee> employeeList = new ArrayList<>();
-        employeeList = this.getEmployeeList();
+        List<Employee> employeeList = this.convertToEmployee();
         List<Employee> employeesSearchList = new ArrayList<>();
         for(Employee ep: employeeList) {
             if(ep.getName().contains(name)) {
@@ -69,10 +69,12 @@ public class EmployeeRepositoryImpl implements IEmployeeRepository {
         }
         return employeesSearchList;
     }
-    public List<Employee> convertToEmployee(List<String> employeeStringList) {
+    public List<Employee> convertToEmployee() {
         List<Employee> employeeList = new ArrayList<>();
-        for(String employee: employeeStringList) {
-            String[] array = employee.split(COMMA);
+        List<String> stringList = ReadAndWriteByCharacterStream.readByCharacterStream(PATH_NAME);
+        String[] array;
+        for(String employee: stringList) {
+             array = employee.split(COMMA);
             employeeList.add(new Employee(
                     array[0],
                     array[1],
@@ -103,10 +105,11 @@ public class EmployeeRepositoryImpl implements IEmployeeRepository {
         }
         return employeeStringList;
     }
-    public List<Employee> getEmployeeList(){
-         List<Employee> employeeStringList = convertToEmployee(ReadAndWriteByCharacterStream.readByCharacterStream(PATH_NAME));
-        return employeeStringList;
-    }
+//    public List<Employee> getEmployeeList(){
+//         List<Employee> employeeStringList = new ArrayList<>();
+//         employeeStringList = convertToEmployee(ReadAndWriteByCharacterStream.readByCharacterStream(PATH_NAME));
+//        return employeeStringList;
+//    }
 
 
 }

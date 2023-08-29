@@ -20,11 +20,7 @@ public class EmployeeServiceImpl implements IEmployeeService {
 
     @Override
     public void add(Employee employee) {
-        for(Employee ep: employeeRepo.display()) {
-            if(employee.getId().equals(ep.getId())) {
-                employeeRepo.add(employee);
-            }
-        }
+        employeeRepo.add(employee);
     }
     @Override
     public void edit(Employee employee) {
