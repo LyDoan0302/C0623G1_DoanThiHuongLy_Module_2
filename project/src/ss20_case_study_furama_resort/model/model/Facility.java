@@ -69,7 +69,14 @@ public abstract class Facility {
         this.rentingType = rentingType;
     }
 
-
-
-
+    @Override
+    public String toString() {
+        return
+                "idFacility: " + idFacility + '\t' +
+                ",name of facility: " + facilityName + '\t' +
+                ",using area: " + usingArea + '\t' +
+                ",price: " + price + '\t' +
+                ",max quantity of people: " + maxQuantityOfPeople + '\t' +
+                ",renting type: " + rentingType ;
+    }
 }

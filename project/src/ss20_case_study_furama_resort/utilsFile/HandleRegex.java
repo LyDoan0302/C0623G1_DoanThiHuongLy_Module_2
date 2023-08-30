@@ -15,6 +15,11 @@ public class HandleRegex {
     public static final String DATE_OF_BIRTH_REGEX = "^(0[1-9]|[12]\\d|3[01])\\/(0[1-9]|1[012])\\/([12]\\d{3})$";
     public static final String ACADEMIC_LEVEL_REGEX = "Intermediate|College|University|Postgraduate$";
     public static final String POSITION_REGEX = "Receptionist|Servants|Expert|Supervisor|Manager|Director$";
+    public static final String ADDRESS_REGEX = "^[#.0-9a-zA-Z\\s,-]+$";
+    public static final String CUSTOMER_CLASS_REGEX = "Diamond|Platinum|Gold|Silver|Member$";
+    public static final String FACILITY_ID_REGEX = "^SV(VL|HO|RO)-\\d{4}$";
+    public static final String FACILITY_NAME_GENERAL_REGEX = "^[A-Z][a-z]*(\\s\\w*)*$";
+    public static final String RENTING_TYPE_REGEX = "Year|Month|Day|Hour$";
     public static String handleRegex(String regex, String name) {
         System.out.print("Enter " + name + ": " );
         String input = scanner.nextLine();

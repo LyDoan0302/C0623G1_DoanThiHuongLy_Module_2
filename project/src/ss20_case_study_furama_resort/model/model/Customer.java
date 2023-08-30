@@ -26,4 +26,13 @@ public class Customer extends Person{
     public void setCustomerClass(String customerLevel) {
         this.customerClass = customerLevel;
     }
+
+    @Override
+    public String toString() {
+        return "Customer's information: " + '\t' +
+                super.toString() +
+                "address: " + address + '\t' +
+                ", customerClass: " + customerClass
+                ;
+    }
 }

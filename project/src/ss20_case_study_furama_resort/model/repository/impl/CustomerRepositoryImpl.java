@@ -18,18 +18,18 @@ public class CustomerRepositoryImpl implements ICustomerRepository {
     private static final String PATH_NAME = "/Users/mac/Documents/GitHub_ver2/C0623G1_DoanThiHuongLy_Module_2/project/src/ss20_case_study_furama_resort/data/Customer.csv";
     @Override
     public List<Customer> display() {
-        List<Customer> customerList = this.getCustomer();
+        List<Customer> customerList = this.convertToCustomer();
         return customerList;
     }
     @Override
     public void add(Customer customer) {
-        List<Customer> customerList = this.getCustomer();
+        List<Customer> customerList = this.convertToCustomer();
         customerList.add(customer);
         ReadAndWriteByCharacterStream.writeByCharacterStream(PATH_NAME,convertToString(customerList));
     }
     @Override
     public void edit(Customer customer) {
-        List<Customer> customerList = this.getCustomer();
+        List<Customer> customerList = this.convertToCustomer();
         for(Customer cus: customerList) {
             if(cus.getId().equals(customer.getId())) {
                 cus.setName(customer.getName());
@@ -47,7 +47,7 @@ public class CustomerRepositoryImpl implements ICustomerRepository {
 
     @Override
     public void delete(String id) {
-        List<Customer> customerList = this.getCustomer();
+        List<Customer> customerList = this.convertToCustomer();
         for(Customer cus : customerList) {
             if(id.equals(cus.getId())) {
                 customerList.remove(cus);
@@ -58,7 +58,7 @@ public class CustomerRepositoryImpl implements ICustomerRepository {
 
     @Override
     public List<Customer> search(String name) {
-        List<Customer> customerList = this.getCustomer();
+        List<Customer> customerList = this.convertToCustomer();
         List<Customer> customersSearchList = new ArrayList<>();
         for(Customer cus : customerList) {
             if(cus.getName().contains(name)) {
@@ -68,10 +68,12 @@ public class CustomerRepositoryImpl implements ICustomerRepository {
         return customersSearchList;
     }
 
-    public List<Customer> convertToCustomer(List<String> customerStringList) {
+    public List<Customer> convertToCustomer() {
         List<Customer> customerList = new ArrayList<>();
+        List<String> customerStringList = ReadAndWriteByCharacterStream.readByCharacterStream(PATH_NAME);
+        String[] str;
         for(String cus: customerStringList) {
-            String[] str = cus.split(COMMA);
+            str = cus.split(COMMA);
             customerList.add( new Customer(
                     str[0],
                     str[1],
@@ -92,6 +94,7 @@ public class CustomerRepositoryImpl implements ICustomerRepository {
                     cus.getId() + COMMA +
                     cus.getName() + COMMA +
                     cus.getBirth() + COMMA +
+                    cus.getGender() + COMMA +
                     cus.getPrivateId() + COMMA +
                     cus.getPhoneNumber() + COMMA +
                     cus.getEmail() + COMMA +
@@ -100,9 +103,9 @@ public class CustomerRepositoryImpl implements ICustomerRepository {
         }
         return customerStringList;
     }
-    public List<Customer> getCustomer() {
-        List<String> customerStringList = new ArrayList<>();
-        customerStringList = ReadAndWriteByCharacterStream.readByCharacterStream(PATH_NAME);
-        return convertToCustomer(customerStringList);
-    }
+//    public List<Customer> getCustomer() {
+//        List<String> customerStringList = new ArrayList<>();
+//        customerStringList = ReadAndWriteByCharacterStream.readByCharacterStream(PATH_NAME);
+//        return convertToCustomer(customerStringList);
+//    }
 }

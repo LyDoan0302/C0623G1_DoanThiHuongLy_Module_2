@@ -78,13 +78,13 @@ public abstract class Person {
     @Override
     public String toString() {
         return
-                "id: " + id + '\'' +
-                ", name: " + name + '\'' +
-                ", birth: " + birth + '\'' +
-                ", gender: " + gender + '\'' +
-                ", privateId: " + privateId + '\'' +
-                ", phoneNumber: " + phoneNumber + '\'' +
-                ", email: " + email + '\''
+                ", id: " + id + '\t' +
+                ", name: " + name + '\t' +
+                ", birth: " + birth + '\t' +
+                ", gender: " + gender + '\t' +
+                ", privateId: " + privateId + '\t' +
+                ", phoneNumber: " + phoneNumber + '\t' +
+                ", email: " + email + '\t'
                 ;
     }
 }

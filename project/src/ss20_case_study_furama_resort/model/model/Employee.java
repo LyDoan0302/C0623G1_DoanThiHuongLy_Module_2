@@ -39,10 +39,10 @@ public class Employee extends Person{
 
     @Override
     public String toString() {
-        return "Employee:" +
+        return "Employee's information:" + '\t' +
                 super.toString() +
-                "academicLevel: '" + academicLevel + '\'' +
-                ", position: '" + position + '\'' +
+                "academicLevel: " + academicLevel + '\t' +
+                ", position: " + position + '\t' +
                 ", salary: " + salary
                 ;
     }
