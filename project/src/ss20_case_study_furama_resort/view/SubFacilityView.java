@@ -14,6 +14,7 @@ import java.util.Scanner;
 
 public class SubFacilityView {
     Scanner scanner = new Scanner(System.in);
+    private static final MainView mainView = new MainView();
     private static final FacilityController facilityController = new FacilityController();
     private static LinkedHashMap<Facility, Integer> facilityList = facilityController.display();
     static SubFacilityView subFacilityView = new SubFacilityView();
@@ -24,7 +25,7 @@ public class SubFacilityView {
         System.out.println("1.  Room");
         System.out.println("2.  Villa");
         System.out.println("3.  House");
-        System.out.println("4.  Back to input menu.");
+        System.out.println("4.  Return Facility menu.");
     }
 
     public Facility inputFacilityMain() {
@@ -37,17 +38,20 @@ public class SubFacilityView {
                 case 1:
                     Facility facilityRoom = inputRoom();
                     System.out.println("New room is created successfully!");
+                    inputFacilityMain();
                     return  facilityRoom;
                 case 2:
                     Facility facilityVilla = inputVilla();
                     System.out.println("New villa is created successfully!");
+                    inputFacilityMain();
                     return facilityVilla;
                 case 3:
                     Facility facilityHouse = inputHouse();
                     System.out.println("New house is created successfully!");
+                    inputFacilityMain();
                     return  facilityHouse;
                 case 4:
-                    inputFacilityMain();
+                    mainView.choiceFacility();
                 default:
                     System.out.println("Choice is invalid!");
                     System.out.print("Enter again: ");
