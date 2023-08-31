@@ -17,7 +17,7 @@ public class FacilityController {
     public LinkedHashMap<Facility, Integer> displayListFacilityMaintain(){
         return facilityService.displayListFacilityMaintain();
     }
-    public void deleteFacility(Facility facility){
-        facilityService.deleteFacility(facility);
+    public void deleteFacility(String inputId){
+        facilityService.deleteFacility(inputId);
     }
 }

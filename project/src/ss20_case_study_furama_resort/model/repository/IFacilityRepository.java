@@ -10,5 +10,5 @@ public interface IFacilityRepository {
     LinkedHashMap<Facility, Integer> display();
     void addFacility(Facility facility);
     LinkedHashMap<Facility, Integer> displayListFacilityMaintenance();
-    void deleteFacility(Facility facility);
+    void deleteFacility(String inputId);
 }

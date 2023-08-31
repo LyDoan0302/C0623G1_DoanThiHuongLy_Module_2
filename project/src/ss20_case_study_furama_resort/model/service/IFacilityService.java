@@ -9,5 +9,5 @@ public interface IFacilityService {
     LinkedHashMap<Facility, Integer> display();
     void addFacility(Facility facility);
     LinkedHashMap<Facility, Integer> displayListFacilityMaintain();
-    void deleteFacility(Facility facility);
+    void deleteFacility(String inputId);
 }

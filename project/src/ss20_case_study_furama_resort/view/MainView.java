@@ -211,14 +211,27 @@ public class MainView {
                     }
                     return;
                 case 2: //add
-
+                    facilityController.addFacility(subFacilityView.inputFacilityMain());
                     return;
                 case 3: //display list facility maintenance
-
+                    facilityController.displayListFacilityMaintain();
                     return;
                 case 4: //delete
 
-                    return;
+                    while (true) {
+                        System.out.print("Enter facility's id to remove:");
+                        String inputId = scanner.nextLine();
+                        LinkedHashMap<Facility, Integer> facilityList = facilityController.display();
+                        for(Facility f: facilityList.keySet()) {
+                            if(inputId.equals(f.getIdFacility())) {
+                                facilityController.deleteFacility(inputId);
+                                System.out.println("Removed successfully!");
+                                return;
+                            }
+                        }
+                            System.out.println("Id is invalid!");
+                            System.out.println("Enter again.");
+                        }
                 case 5:
                     this.render();
                 default:

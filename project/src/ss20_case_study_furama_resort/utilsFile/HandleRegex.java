@@ -17,7 +17,9 @@ public class HandleRegex {
     public static final String POSITION_REGEX = "Receptionist|Servants|Expert|Supervisor|Manager|Director$";
     public static final String ADDRESS_REGEX = "^[#.0-9a-zA-Z\\s,-]+$";
     public static final String CUSTOMER_CLASS_REGEX = "Diamond|Platinum|Gold|Silver|Member$";
-    public static final String FACILITY_ID_REGEX = "^SV(VL|HO|RO)-\\d{4}$";
+    public static final String FACILITY_ROOM_ID_REGEX = "^SVRO-\\d{4}$";
+    public static final String FACILITY_VILLA_ID_REGEX = "^SVVL-\\d{4}$";
+    public static final String FACILITY_HOUSE_ID_REGEX = "^SVHO-\\d{4}$";
     public static final String FACILITY_NAME_GENERAL_REGEX = "^[A-Z][a-z]*(\\s\\w*)*$";
     public static final String RENTING_TYPE_REGEX = "Year|Month|Day|Hour$";
     public static String handleRegex(String regex, String name) {

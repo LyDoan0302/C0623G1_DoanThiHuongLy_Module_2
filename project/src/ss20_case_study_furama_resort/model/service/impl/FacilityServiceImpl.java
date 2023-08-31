@@ -22,6 +22,7 @@ public class FacilityServiceImpl implements IFacilityService {
 
     @Override
     public void addFacility(Facility facility) {
+
         facilityRepository.addFacility(facility);
     }
 
@@ -31,7 +32,7 @@ public class FacilityServiceImpl implements IFacilityService {
     }
 
     @Override
-    public void deleteFacility(Facility facility) {
-        facilityRepository.deleteFacility(facility);
+    public void deleteFacility(String inputId) {
+        facilityRepository.deleteFacility(inputId);
     }
 }

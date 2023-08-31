@@ -38,9 +38,10 @@ public class FacilityRepositoryImpl implements IFacilityRepository {
     public void addFacility(Facility facility) {
         for(Map.Entry<Facility, Integer> entry: linkedHashMap.entrySet()) {
             if(entry.getKey().equals(facility)) {
-                linkedHashMap.put(facility,0);
+                continue;
             }
         }
+        linkedHashMap.put(facility,0);
     }
 
     @Override
@@ -55,10 +56,10 @@ public class FacilityRepositoryImpl implements IFacilityRepository {
     }
 
     @Override
-    public void deleteFacility(Facility key) {
-        for(Map.Entry<Facility, Integer> entry: linkedHashMap.entrySet()) {
-            if(key.equals(entry.getKey())) {
-                linkedHashMap.remove(key);
+    public void deleteFacility(String inputId) {
+        for(Facility f : linkedHashMap.keySet()) {
+            if(inputId.equals(f.getIdFacility())) {
+                linkedHashMap.remove(f);
                 break;
             }
         }
